@@ -1,0 +1,193 @@
+:root {
+    --prussian-blue: #102542ff;
+    --steel-blue: #759eb8ff;
+    --powder-blue: #b3c5d7ff;
+    --alice-blue: #d8e1e9ff;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: serif;
+    line-height: 1.7; 
+    background: linear-gradient(to bottom, var(--prussian-blue), var(--steel-blue));
+    min-height: 100vh;
+}
+
+.container { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 2rem 1.5rem; 
+}
+
+.top { 
+    text-align: center; 
+    padding: 3rem 0; 
+    margin-bottom: 4rem;
+}
+
+.top h { 
+    font-size: 2.5rem;
+    color: var(--alice-blue);
+    letter-spacing: 12px;
+}
+
+.top p { 
+    font-size: 1.2rem; 
+    color: var(--powder-blue);
+    max-width: 500px;
+    margin: 20px auto;
+    font-style: italic;
+    letter-spacing: 0.4rem;
+}
+
+.poetry { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; 
+    padding-bottom: 1rem;
+}
+
+.poem { 
+    perspective: 1000px;
+    height: auto !important; 
+    min-height: 250px; 
+}
+
+.flip-card { 
+    width: 100%; 
+    height: 100%; 
+    min-height: 250px; 
+    max-height: none; 
+    cursor: pointer;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.flip-card-inner { 
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    min-height: 250px;
+    transition: transform 0.7s ease;
+    transform-style: preserve-3d; 
+}
+
+.flip-card:hover .flip-card-inner { 
+    transform: rotateY(180deg); 
+}
+
+.flip-card-front, .flip-card-back { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    min-height: 250px; 
+    backface-visibility: hidden; 
+    padding: 2.5rem 2rem; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    border-radius: 16px; 
+    transition: all 0.4s ease;
+}
+
+
+.flip-card-front { 
+    color: var(--steel-blue);
+    background-color: var(--prussian-blue);
+}
+
+.flip-card-front h { 
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0 0 1rem 0; 
+    flex-shrink: 0;
+}
+
+.flip-card-back { 
+    background: var(--alice-blue);
+    color: var(--prussian-blue);
+    transform: rotateY(180deg); 
+    overflow-y: auto;
+    padding: 1.5rem 2rem 2.5rem 2rem; 
+}
+
+.flip-card-back p { 
+    margin: 0; 
+    font-size: 1.1rem;
+    font-style: normal;
+    width: 100%;
+}
+
+.flip-card-back::-webkit-scrollbar { 
+    width: 6px; 
+}
+
+.footer {
+    text-align: center; 
+    padding: 3rem 0 2rem;
+    color: var(--prussian-blue);
+    font-size: 1.1rem;
+    border-top: 2px solid var(--prussian-blue);
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particles span {
+    position: absolute;
+    bottom: 100vh; 
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: fall linear infinite;
+}
+
+.particles span:nth-child(1) { left: 5%; width: 4px; height: 4px; animation-duration: 7s; animation-delay: 0s; }
+.particles span:nth-child(2) { left: 10%; width: 5px; height: 5px; animation-duration: 9s; animation-delay: 2s; }
+.particles span:nth-child(3) { left: 15%; width: 6px; height: 6px; animation-duration: 8s; animation-delay: 4s; }
+.particles span:nth-child(4) { left: 20%; width: 3px; height: 3px; animation-duration: 10s; animation-delay: 1s; }
+.particles span:nth-child(5) { left: 25%; width: 7px; height: 7px; animation-duration: 7s; animation-delay: 6s; }
+.particles span:nth-child(6) { left: 30%; width: 4px; height: 4px; animation-duration: 8s; animation-delay: 3s; }
+.particles span:nth-child(7) { left: 35%; width: 5px; height: 5px; animation-duration: 7s; animation-delay: 8s; }
+.particles span:nth-child(8) { left: 40%; width: 6px; height: 6px; animation-duration: 9s; animation-delay: 5s; }
+.particles span:nth-child(9) { left: 45%; width: 4px; height: 4px; animation-duration: 6s; animation-delay: 0.5s; }
+.particles span:nth-child(10) { left: 50%; width: 5px; height: 5px; animation-duration: 10s; animation-delay: 7s; }
+.particles span:nth-child(11) { left: 55%; width: 6px; height: 6px; animation-duration: 7s; animation-delay: 2.5s; }
+.particles span:nth-child(12) { left: 60%; width: 3px; height: 3px; animation-duration: 9s; animation-delay: 9s; }
+.particles span:nth-child(13) { left: 65%; width: 7px; height: 7px; animation-duration: 8s; animation-delay: 1.5s; }
+.particles span:nth-child(14) { left: 70%; width: 4px; height: 4px; animation-duration: 7s; animation-delay: 4.5s; }
+.particles span:nth-child(15) { left: 75%; width: 5px; height: 5px; animation-duration: 10s; animation-delay: 10s; }
+.particles span:nth-child(16) { left: 80%; width: 6px; height: 6px; animation-duration: 8s; animation-delay: 3.5s; }
+.particles span:nth-child(17) { left: 85%; width: 4px; height: 4px; animation-duration: 9s; animation-delay: 6.5s; }
+.particles span:nth-child(18) { left: 90%; width: 5px; height: 5px; animation-duration: 7s; animation-delay: 8.5s; }
+.particles span:nth-child(19) { left: 95%; width: 6px; height: 6px; animation-duration: 9s; animation-delay: 11s; }
+.particles span:nth-child(20) { left: 100%; width: 3px; height: 3px; animation-duration: 6s; animation-delay: 0.8s; }
+
+@keyframes fall {
+    0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    }
+    100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+    }
+}
